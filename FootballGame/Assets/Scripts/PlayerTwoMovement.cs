@@ -17,10 +17,10 @@ public class PlayerTwoMovement : MonoBehaviour
     void FixedUpdate()
     {   
         if (Input.GetKey("right")) {
-            rb.AddForce(new Vector3(10, 0, 0));
+            rb.AddForce(new Vector3(15, 0, 0));
         }
         if (Input.GetKey("left")) {
-            rb.AddForce(new Vector3(-10, 0, 0));
+            rb.AddForce(new Vector3(-15, 0, 0));
         }
         if (Input.GetKey("up")) {
             rb.AddForce(new Vector3(0, 50, 0));

@@ -17,10 +17,10 @@ public class PlayerOneMovement : MonoBehaviour
     void FixedUpdate()
     {   
         if (Input.GetKey("d")) {
-            rb.AddForce(new Vector3(10, 0, 0));
+            rb.AddForce(new Vector3(20, 0, 0));
         }
         if (Input.GetKey("a")) {
-            rb.AddForce(new Vector3(-10, 0, 0));
+            rb.AddForce(new Vector3(-20, 0, 0));
         }
         if (Input.GetKey("w")) {
             rb.AddForce(new Vector3(0, 50, 0));

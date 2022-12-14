@@ -24,11 +24,8 @@ public class BallColider : MonoBehaviour
         {
             foreach (ContactPoint contact in collision.contacts)
             {
-                print(contact.thisCollider.name + " hit " + contact.otherCollider.name + "POINT" + contact.point[1]);
-                // Visualize the contact point
                 if (contact.point[1] > 0.6) {
-                    print("here");
-                    rb.AddForce(new Vector3(0, 200, 0));
+                    rb.AddForce(new Vector3(0, 50, 0));
                 }
             }
         }
