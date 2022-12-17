@@ -25,7 +25,7 @@ public class BallColider : MonoBehaviour
             foreach (ContactPoint contact in collision.contacts)
             {
                 if (contact.point[1] > 0.6) {
-                    rb.AddForce(new Vector3(0, 50, 0));
+                    rb.AddForce(new Vector3(0, 200, 0));
                 }
             }
         }

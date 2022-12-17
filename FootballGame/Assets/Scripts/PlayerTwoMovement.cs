@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class PlayerTwoMovement : MonoBehaviour
 {
+    public CharacterController controller;
     public Rigidbody rb;
-
+    public float speed = 6f;
+    [SerializeField]
+    public float jumpHeight = 30f;
+    private Vector3 moveDir = Vector3.zero;
 
     // Start is called before the first frame update
     void Start()
@@ -17,13 +21,22 @@ public class PlayerTwoMovement : MonoBehaviour
     void FixedUpdate()
     {   
         if (Input.GetKey("right")) {
-            rb.AddForce(new Vector3(15, 0, 0));
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            moveDir.x = horizontal * speed;
+            float y = Input.GetAxisRaw("Vertical");
+            moveDir.y = y;
+            controller.Move(moveDir * Time.deltaTime);
         }
         if (Input.GetKey("left")) {
-            rb.AddForce(new Vector3(-15, 0, 0));
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            moveDir.x = horizontal * speed;
+            float y = Input.GetAxisRaw("Vertical");
+            print(y);
+            moveDir.y = y;
+            controller.Move(moveDir * Time.deltaTime);
         }
         if (Input.GetKey("up")) {
-            rb.AddForce(new Vector3(0, 50, 0));
+            rb.AddForce(new Vector3(0, jumpHeight * 10, 0));
         }
     }
 }
